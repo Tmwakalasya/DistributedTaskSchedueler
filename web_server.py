@@ -13,6 +13,10 @@ class Tasks(db.Model):
     parameters = db.Column(db.String(255))
     status = db.Column(db.String(20))
     timestamps = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+
+
+if __name__ == '__main__':
     with app.app_context():
         db.create_all()
+    app.run(debug=False)
 
